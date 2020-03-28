@@ -1,11 +1,13 @@
-#include "includes/libasm.h"
+
 #include <stddef.h>
 #include <stdio.h>
+# include <unistd.h>
 
-extern size_t ft_strlen(const char *s);
-
-int main()
+ssize_t ft_write(int fd, const void *buf, size_t count);
+int     ft_strcmp(const char *s1, const char *s2);
+//size_t ft_strlen(const char *s);
+int main(void)
 {
-    size_t n = ft_strlen("");
-    printf("%d", (int)n);
+   int n = ft_strcmp("x", "xol");
+   printf("%d", n);
 }

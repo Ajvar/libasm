@@ -6,14 +6,18 @@
 /*   By: jcueille <jcueille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 01:18:31 by jcueille          #+#    #+#             */
-/*   Updated: 2020/03/21 01:29:01 by jcueille         ###   ########.fr       */
+/*   Updated: 2020/03/28 15:37:15 by jcueille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBASM_H
 # define LIBASM_H
 # include <stddef.h>
+# include <unistd.h>
 
-size_t ft_strlen(const char *s); 
+size_t  ft_strlen(const char *s); 
+ssize_t ft_write(int fd, const void *buf, size_t count);
+int     ft_strcmp(const char *s1, const char *s2);
+
 
 #endif
