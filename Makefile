@@ -6,7 +6,7 @@
 #    By: jcueille <jcueille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/21 01:17:38 by jcueille          #+#    #+#              #
-#    Updated: 2020/03/28 15:57:43 by jcueille         ###   ########.fr        #
+#    Updated: 2020/03/29 17:38:05 by jcueille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS = 		$(SRCS_PATH)ft_strlen.s \
 OBJS = $(SRCS:%.s=%.o)
 
 %.o : %.s
-	nasm -f elf64 -g $< -o $@
+	nasm -f macho64 -g $< -o $@
 %.o : %.c
 	$(CC) $(CFLAGS) -I. $< -o $@
 

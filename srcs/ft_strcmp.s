@@ -1,19 +1,43 @@
+global _ft_strcmp
+
 SECTION .text
-global ft_strcmp
 
-ft_strcmp:
-    mov rax, rdi
-    mov rbx, rsi
+_ft_strcmp:
+	push r12
+	push r13
+	mov r12, rdi
+	mov r13, rsi
+	mov rcx, -1
 
-compare:
-    cmp byte [rax], 0
-    je diff
-    cmp rax, rbx
-    jne diff
-    inc rax
-    inc rbx
-    jmp compare
+loop:
+	inc rcx
+	cmp byte [r12 + rcx], 0
+	je equal
+	mov dl, byte [r13 + rcx]
+	cmp byte [r12 + rcx], dl
+	jl less
+	jg greater
+	jmp loop
+	
+equal:
+	cmp byte [r13 + rcx], 0
+	je end
+	jmp less
 
-diff:
-    sub rax,rbx
-    ret
+end:
+	mov rax, 0
+	pop r12
+	pop r13
+	ret
+	
+greater:
+	mov rax, 1
+	pop r12
+	pop r13
+	ret
+
+less:
+	mov rax, -1
+	pop r12
+	pop r13
+	ret
