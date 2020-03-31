@@ -6,7 +6,7 @@
 #    By: jcueille <jcueille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/21 01:17:38 by jcueille          #+#    #+#              #
-#    Updated: 2020/03/29 17:38:05 by jcueille         ###   ########.fr        #
+#    Updated: 2020/03/31 14:30:52 by jcueille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRCS_PATH = ./srcs/
 NAME = libasm.a
 
 SRCS = 		$(SRCS_PATH)ft_strlen.s \
+			$(SRCS_PATH)ft_strcpy.s \
 			$(SRCS_PATH)ft_strcmp.s \
 			$(SRCS_PATH)ft_write.s \
 			$(SRCS_PATH)ft_read.s 
