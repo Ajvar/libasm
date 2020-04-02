@@ -1,6 +1,7 @@
 global _ft_strdup
-%include 'ft_strlen.s'
-%include 'ft_strcpy.s'
+extern _ft_strlen
+extern _ft_strcpy
+extern _malloc
 
 SECTION .text
 
@@ -10,7 +11,7 @@ _ft_strdup:
 	mov rdi, rax
 	inc rdi
 	call _malloc
-	push rsi
+	pop rsi
 	mov rdi, rax
 	call _ft_strcpy
 	ret
