@@ -11,7 +11,6 @@ loop:
     mov [rdi + rcx], dl
 	cmp [rdi + rcx], byte 0
 	je end
-    inc rcx
     jmp loop
 end:
 	mov rax, rdi    

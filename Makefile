@@ -6,13 +6,13 @@
 #    By: jcueille <jcueille@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/03/21 01:17:38 by jcueille          #+#    #+#              #
-#    Updated: 2020/04/02 15:30:02 by jcueille         ###   ########.fr        #
+#    Updated: 2020/04/05 21:10:04 by jcueille         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 
-RM = rm
+RM = rm -f
 
 CFLAGS = -Wextra -Wall -Werror
 

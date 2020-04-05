@@ -9,6 +9,7 @@
 #include <fcntl.h>
 int main(void)
 {
+	t_list structure;
   printf("----- FT_STRLEN -----\n");
   printf("REAL || YOURS\n");
 	printf("%lu || %zu\n", strlen(""), ft_strlen(""));
@@ -31,5 +32,7 @@ int main(void)
 	printf("%s\n", ft_strcpy(s2, "lol"));
 	printf("%s\n", strcpy(s3, ""));
 	printf("%s\n", ft_strcpy(s4, ""));
+	printf("----- FT_STRDUP -----");
+	printf("\n%s\n%s\n%s\n%s\n", strdup("lol"), ft_strdup("lol"), strdup(""), ft_strdup(""));
 }
 
