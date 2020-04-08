@@ -1,2 +1,2 @@
-*.Assembly linguist-detectable=true
+*.assembly linguist-detectable=true
 *.c linguist-detectable=false
