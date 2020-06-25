@@ -1,3 +1,5 @@
+extern ___error
+
 section .text
 
     global _ft_read
