@@ -15,6 +15,8 @@ int main(void)
 	printf("%lu || %zu\n", strlen(""), ft_strlen(""));
    printf("%lu || %zu\n", strlen("lol"), ft_strlen("lol"));
 
+	printf("----- FT_READ -----\n");
+	
 	printf("----- FT_WRITE -----\n");
 	 write(1, "", 0);
 	printf("\n");
