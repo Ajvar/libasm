@@ -9,7 +9,7 @@
 #include <fcntl.h>
 # include <errno.h>
 
-typedef struct  s_tests
+/*typedef struct  s_tests
 {
         char    *fct_name;
         int             done;
@@ -45,7 +45,7 @@ int             test_read(const int fd_me, const int fd_true, const int size)
 		all_good = (eq[0] && eq[1] && !strcmp(buf[0], buf[1]) ? 1 : 0);
 		printf("ft_read:\n    return:%d\nerrno:%d\nread:\n    return:%d\nerrno:%d\n", ret[0],err[0], ret[1],err[1]);
         return (all_good);
-}
+}*/
 
 int main(void)
 {
@@ -61,10 +61,15 @@ int main(void)
    printf("%lu || %zu\n", strlen("lol"), ft_strlen("lol"));
 
 	printf("----- FT_READ -----\n");
-	if (test_read(fd, 456, 4) == 0)
+	/*if (test_read(fd, 456, 4) == 0)
 		printf("OK"); 
 	else
-		printf("PROBLEM"); 
+		printf("PROBLEM"); */
+	int ret;
+	ret = (int)ft_read(0, dest, 2);
+	printf("ret is %d, read '%.*s'\n", ret, ret, dest);
+	ret = (int)ft_read(0, dest, 8);
+	printf("ret is %d, read '%.*s'\n", ret, ret, dest);
 	printf("----- FT_WRITE -----\n");
 	 write(1, "", 0);
 	printf("\n");
