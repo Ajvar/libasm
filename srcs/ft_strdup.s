@@ -3,8 +3,7 @@ extern _ft_strlen
 extern _ft_strcpy
 extern _malloc
 extern ___error
-
-SECTION .text
+section .text
 
 _ft_strdup:
 	push rdi

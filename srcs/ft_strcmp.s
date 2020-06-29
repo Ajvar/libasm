@@ -1,6 +1,5 @@
 global _ft_strcmp
-
-SECTION .text
+section .text
 
 _ft_strcmp:
 	push r12
