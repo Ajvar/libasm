@@ -1,7 +1,7 @@
-global _ft_atoi_base
+global ft_atoi_base
 
 section text
-extern _ft_strlen
+extern ft_strlen
 
-_ft_atoi_base:
+ft_atoi_base:
 	

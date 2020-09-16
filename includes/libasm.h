@@ -6,7 +6,7 @@
 /*   By: jcueille <jcueille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/21 01:18:31 by jcueille          #+#    #+#             */
-/*   Updated: 2020/04/05 21:17:34 by jcueille         ###   ########.fr       */
+/*   Updated: 2020/09/15 13:57:42 by jcueille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBASM_H
 # include <stddef.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <string.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {

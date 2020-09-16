@@ -46,10 +46,13 @@ int             test_read(const int fd_me, const int fd_true, const int size)
 		printf("ft_read:\n    return:%d\nerrno:%d\nread:\n    return:%d\nerrno:%d\n", ret[0],err[0], ret[1],err[1]);
         return (all_good);
 }
-
+*/
 int main(void)
 {
-	int fd;
+	write(1,"lol",3);
+	ft_write(1,"lol",3);
+
+	/*int fd;
 	int fdd;
 
 	fd = open("test.txt", O_RDONLY);
@@ -60,7 +63,7 @@ int main(void)
 	printf("%lu || %zu\n", strlen(""), ft_strlen(""));
    printf("%lu || %zu\n", strlen("lol"), ft_strlen("lol"));
 
-	printf("----- FT_READ -----\n");
+	printf("----- FT_READ -----\n");*/
 	/*if (test_read(fd, 456, 4) == 0)
 		printf("OK"); 
 	else
@@ -88,9 +91,9 @@ int main(void)
 	printf("%s\n", strcpy(s3, ""));
 	printf("%s\n", ft_strcpy(s4, ""));
 	printf("----- FT_STRDUP -----");
-	printf("\n%s\n%s\n%s\n%s\n", strdup("lol"), ft_strdup("lol"), strdup(""), ft_strdup(""));
-}*/
-
+	printf("\n%s\n%s\n%s\n%s\n", strdup("lol"), ft_strdup("lol"), strdup(""), ft_strdup(""));*/
+}
+/*
 int		cmp(void *d1, void *d2)
 {
 	printf("Compare '%s' - '%s'\n", d1, d2);
@@ -102,15 +105,33 @@ void	free_fct(void *d1)
 	printf("Freeing '%s'\n", d1);
 }
 
+void ft_test_strlen(char *s)
+{
+	int i;
+	int j;
+
+	i = (int)ft_strlen(s);
+	j = (int)strlen(s);
+	printf("\033[0;32m");
+	if (i == j)
+		printf("ok");
+	else
+	{
+		printf("\033[0;31m");
+		printf("FAILED: ft_strlen: %d | strlen: %d", i, j);
+	}
+	printf("\033[0m");
+}
+
 int		main(void)
 {
 	printf("-- ft_strlen\n");
-	printf("%ld\n", ft_strlen(""));
-	printf("%ld\n", ft_strlen("a"));
-	printf("%ld\n", ft_strlen("aa"));
-	printf("%ld\n", ft_strlen("licorne"));
-
-	char dest[50];
+	ft_test_strlen("");
+	t_test_strlen("a");
+	t_test_strlen("42");
+	ft_test_strlen("azertyuiopqsdfghjklmwxcvbn");
+*/
+	/*char dest[50];
 	printf("-- ft_strcpy\n");
 	printf("%s\n", ft_strcpy(dest, "licorne"));
 	printf("%s\n", ft_strcpy(dest, "aaa"));
@@ -127,14 +148,14 @@ int		main(void)
 	printf("ret was %ld\n", ft_write(1, "licorne\n", 8));
 	printf("ret was %ld\n", ft_write(1, "aaa\n", 4));
 
-	/*
+	
 	printf("-- ft_read\n");
 	int ret;
 	ret = (int)ft_read(0, dest, 2);
 	printf("ret is %d, read '%.*s'\n", ret, ret, dest);
 	ret = (int)ft_read(0, dest, 8);
 	printf("ret is %d, read '%.*s'\n", ret, ret, dest);
-	*/
+	
 
 	printf("-- ft_strdup\n");
 	printf("'%s'\n", ft_strdup("hello"));
@@ -181,4 +202,4 @@ int		main(void)
 		lst2 = lst2->next;
 		free(tmp);
 	}
-}
+}*/

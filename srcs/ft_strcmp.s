@@ -1,7 +1,7 @@
-global _ft_strcmp
+global ft_strcmp
 section .text
 
-_ft_strcmp:
+ft_strcmp:
 	push r12
 	push r13
 	mov r12, rdi

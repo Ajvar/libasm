@@ -1,16 +1,18 @@
-global _ft_write
-extern ___error
+global ft_write
+extern __errno_location
 section .text
 
-_ft_write:
-    mov rax, 0x02000004
+ft_write:
+    mov rax, 1
     syscall
-    jc error
+    cmp rax, 0
+    jl error
     ret
 
 error:
+    neg rax
     push rax
-    call ___error
+    call __errno_location
     pop QWORD [rax]
     mov rax, -1
     ret
