@@ -3,6 +3,7 @@
 #include <stdio.h>
 # include <unistd.h>
 #include <string.h>
+#include <strings.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -43,27 +44,60 @@ int             test_read(const int fd_me, const int fd_true, const int size)
         err[1] = errno;
         eq[0] = (ret[0] == ret[1]); eq[1] = (err[0] == err[1]);
 		all_good = (eq[0] && eq[1] && !strcmp(buf[0], buf[1]) ? 1 : 0);
-		printf("ft_read:\n    return:%d\nerrno:%d\nread:\n    return:%d\nerrno:%d\n", ret[0],err[0], ret[1],err[1]);
-        return (all_good);
+		printf("ft_read:\n    \nreturn:%d\nerrno:%d\nread:\n    \nreturn:%d\nerrno:%d\n", ret[0],err[0], ret[1],err[1]);
+        \nreturn (all_good);
 }
 */
 int main(void)
 {
-	write(1,"lol",3);
-	ft_write(1,"lol",3);
-
-	/*int fd;
+	char read_buff[81];
+	int fd;
 	int fdd;
 
 	fd = open("test.txt", O_RDONLY);
 	fdd = open("test.txt", O_RDONLY);
 	t_list structure;
-  printf("----- FT_STRLEN -----\n");
-  printf("REAL || YOURS\n");
+	printf("----- FT_STRLEN -----\n");
+	printf("REAL || YOURS\n");
 	printf("%lu || %zu\n", strlen(""), ft_strlen(""));
-   printf("%lu || %zu\n", strlen("lol"), ft_strlen("lol"));
+	printf("%lu || %zu\n", strlen("lol"), ft_strlen("lol"));
 
-	printf("----- FT_READ -----\n");*/
+	printf("----- FT_WRITE -----\n");
+	printf("REAL:\n");
+	printf("\nReturn :%zd\n-----", write(1, "", 0));
+	printf("\n");
+	printf("YOURS:\n");
+	printf("\nReturn :%zd\n-----", ft_write(1, "", 0));
+	printf("\n");
+	printf("REAL:\n");
+	printf("\nReturn :%zd\n-----", write(1, "saucisse", 8));
+	printf("\n");
+	printf("YOURS:\n");
+	printf("\nReturn :%zd\n-----", ft_write(1, "saucisse", 8));
+	printf("\n");
+	errno = 0;
+	write(3, "lol", 3);
+	printf("REAL: %d\n", errno);
+	errno = 0;
+	ft_write(3, "lol", 3);
+	printf("YOURS: %d\n", errno);
+
+	printf("----- FT_READ -----\n");
+	bzero(read_buff,81);
+	read(fd, read_buff, 81);
+	printf("REAL: \n%s", read_buff);
+	printf("\n\n");
+	lseek(fd, 0L, SEEK_SET);
+	ft_read(fd, read_buff, 81);
+	printf("YOURS: \n%s", read_buff);
+	printf("\n");
+	errno = 0;
+	read(123465, read_buff, 3);
+	printf("REAL: %d\n", errno);
+	errno = 0;
+	ft_read(123465, read_buff, 3);
+	printf("YOURS: %d\n", errno);
+	close(fd);
 	/*if (test_read(fd, 456, 4) == 0)
 		printf("OK"); 
 	else
@@ -73,14 +107,7 @@ int main(void)
 	printf("ret is %d, read '%.*s'\n", ret, ret, dest);
 	ret = (int)ft_read(0, dest, 8);
 	printf("ret is %d, read '%.*s'\n", ret, ret, dest);
-	printf("----- FT_WRITE -----\n");
-	 write(1, "", 0);
-	printf("\n");
-	ft_write(1, "" ,0);
-	printf("\n");
-	write(1, "saucisse", 8);
-	write(1, "\n", 1);
-	ft_write(1, "saucisse", 8);
+
 	char s1[50];
 	char s2[50];
 	char s3[50];
@@ -97,7 +124,7 @@ int main(void)
 int		cmp(void *d1, void *d2)
 {
 	printf("Compare '%s' - '%s'\n", d1, d2);
-	return (((char *)d1)[0] != ((char *)d2)[0]);
+	\nreturn (((char *)d1)[0] != ((char *)d2)[0]);
 }
 
 void	free_fct(void *d1)

@@ -19,7 +19,8 @@ ft_strdup:
 	ret
 
 error:
-	push 100012
+	neg rax
+	push rax
 	call __errno_location
 	pop qword [rax]
 	mov rax, -1

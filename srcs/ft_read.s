@@ -9,6 +9,7 @@ ft_read:
     jl error
     ret
 error:
+    neg rax
     push rax
     call __errno_location
     pop QWORD [rax]
